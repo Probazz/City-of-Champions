@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="icon" type="image/png" href="images/image copy 2.png"> -->
+    <title>Gathering of Champions Academy</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/side-nav.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+  </head>
+  <body>
+    <!-- Modal: Prayer Line Form -->
+    <div class="modal-overlay" id="prayerModal-overlay"></div>
+    <div class="modal" id="prayerModal">
+      <div class="modal-header">
+        <h3>Welcome to City of Champions</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="prayerForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+          <div class="form-group">
+            <label for="prayer">Child's Academic Background</label>
+            <textarea id="prayer" name="prayer" rows="4" required></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal btn-secondary modal-close">Cancel</button>
+        <button class="btn-modal btn-primary" id="submitPrayer">Submit</button>
+      </div>
+    </div>
+
+    <!-- Modal: Member Login -->
+    <div class="modal-overlay" id="loginModal-overlay"></div>
+    <div class="modal" id="loginModal">
+      <div class="modal-header">
+        <h3>Parent Login</h3>
+        <button class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input
+              type="password"
+              id="loginPassword"
+              name="password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <a href="#forgot-password" class="forgot-password"
+              >Forgot Password?</a
+            >
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-modal btn-secondary modal-close">Cancel</button>
+        <button class="btn-modal btn-primary" id="submitLogin">Login</button>
+      </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast" id="toast">
+      <span class="toast-message"></span>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar top">
+      <!--<div class="logo">
+        <img src="images/image copy 2.png" alt="COJIM Logo" />
+      </div>-->
+      <div class="nav-links">
+        <a href="#classes">Classes</a>
+        <a href="#admissions">Admissions</a>
+        <a href="#teachers">Teachers</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+      </div>
+      <div class="nav-buttons">
+        <a href="#apply" class="prayer-btn">Apply Now</a>
+        <a href="#portal" class="member-login">Student Portal</a>
+        <button class="menu-trigger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Side Navigation Panel -->
+    <div class="side-nav-overlay"></div>
+    <nav class="side-nav">
+      <div class="side-nav-header">
+        <img src="images/zed.jpg" alt="COJIM Logo" class="side-nav-logo" />
+        <button class="close-nav">
+          <svg width="24" height="24" viewBox="0 0 24 24">
+            <path
+              d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <div class="nav-sections">
+        <div class="nav-section">
+          <h3>About</h3>
+          <a href="pages/about.html">About Us</a>
+          <a href="pages/vision.html">Our Vision</a>
+          <a href="pages/history.html">School History</a>
+          <a href="pages/policies.html">School Policies</a>
+        </div>
+
+        <div class="nav-section">
+          <h3>Academics</h3>
+          <a href="pages/curriculum.html">Curriculum</a>
+          <a href="pages/classes.html">Classes (Basic 1-6)</a>
+          <a href="pages/subjects.html">Subjects Offered</a>
+          <a href="pages/hw.html">Home Work</a>
+          <a href="pages/schedule.html">Exam Schedule</a>
+        </div>
+
+        <div class="nav-section">
+          <h3>Staff & Students</h3>
+          <a href="pages/teachers.html">Our Teachers</a>
+          <a href="pages/stulife.html">Student Life</a>
+          <a href="pages/women.html">Clubs & Activities</a>
+        </div>
+
+        <div class="nav-section">
+          <h3>Events & News</h3>
+          <a href="pages/events.html">Upcoming Events</a>
+          <a href="pages/calendar.html">School Calendar</a>
+          <a href="pages/news.html">News & Announcements</a>
+          <a href="pages/gallery.html">Gallery</a>
+        </div>
+
+        <div class="nav-section">
+          <h3>Admissions</h3>
+          <a href="pages/apply.html">How to Apply</a>
+          <a href="pages/">Admission Requirements</a>
+          <a href="#fees">School Fees</a>
+          <a href="#scholarship">Scholarship Info</a>
+        </div>
+
+        <div class="nav-section">
+          <h3>Parents Portal</h3>
+          <a href="#parenrs-res">Parents Resources</a>
+          <a href="#pta-info">PTA Information</a>
+          <a href="#rules">School Rules</a>
+          <a href="#dates">Term Dates</a>
+        </div>
+
+        <div class="nav-section">
+          <h3>Contact</h3>
+          <a href="#contact">Contact Us</a>
+          <a href="#location">School Location</a>
+          <a href="#fees">School Fees</a>
+          <a href="#support">Support</a>
+        </div>
+      </div>
+
+      <div class="side-nav-footer">
+        <div class="social-links">
+          <a href="#facebook" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path
+                d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"
+              />
+            </svg>
+          </a>
+          <a href="#twitter" aria-label="Twitter">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path
+                d="M22.46 6C21.69 6.35 20.86 6.58 20 6.69C20.88 6.16 21.56 5.32 21.88 4.31C21.05 4.81 20.13 5.16 19.16 5.36C18.37 4.5 17.26 4 16 4C13.65 4 11.73 5.92 11.73 8.29C11.73 8.63 11.77 8.96 11.84 9.27C8.28 9.09 5.11 7.38 3 4.79C2.63 5.42 2.42 6.16 2.42 6.94C2.42 8.43 3.17 9.75 4.33 10.5C3.62 10.5 2.96 10.3 2.38 10V10.03C2.38 12.11 3.86 13.85 5.82 14.24C5.46 14.34 5.08 14.39 4.69 14.39C4.42 14.39 4.15 14.36 3.89 14.31C4.43 16 6 17.26 7.89 17.29C6.43 18.45 4.58 19.13 2.56 19.13C2.22 19.13 1.88 19.11 1.54 19.07C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79C20.33 8.6 20.33 8.42 20.32 8.23C21.16 7.63 21.88 6.87 22.46 6Z"
+              />
+            </svg>
+          </a>
+          <a href="#instagram" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path
+                d="M12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2ZM12 7C10.6739 7 9.40215 7.52678 8.46447 8.46447C7.52678 9.40215 7 10.6739 7 12C7 13.3261 7.52678 14.5979 8.46447 15.5355C9.40215 16.4732 10.6739 17 12 17C13.3261 17 14.5979 16.4732 15.5355 15.5355C16.4732 14.5979 17 13.3261 17 12C17 10.6739 16.4732 9.40215 15.5355 8.46447C14.5979 7.52678 13.3261 7 12 7ZM18.5 6.75C18.5 6.41848 18.3683 6.10054 18.1339 5.86612C17.8995 5.6317 17.5815 5.5 17.25 5.5C16.9185 5.5 16.6005 5.6317 16.3661 5.86612C16.1317 6.10054 16 6.41848 16 6.75C16 7.08152 16.1317 7.39946 16.3661 7.63388C16.6005 7.8683 16.9185 8 17.25 8C17.5815 8 17.8995 7.8683 18.1339 7.63388C18.3683 7.39946 18.5 7.08152 18.5 6.75ZM12 9C12.7956 9 13.5587 9.31607 14.1213 9.87868C14.6839 10.4413 15 11.2044 15 12C15 12.7956 14.6839 13.5587 14.1213 14.1213C13.5587 14.6839 12.7956 15 12 15C11.2044 15 10.4413 14.6839 9.87868 14.1213C9.31607 13.5587 9 12.7956 9 12C9 11.2044 9.31607 10.4413 9.87868 9.87868C10.4413 9.31607 11.2044 9 12 9Z"
+              />
+            </svg>
+          </a>
+          <a href="#youtube" aria-label="YouTube">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <path
+                d="M21.543 6.498C22 8.28 22 12 22 12C22 12 22 15.72 21.543 17.502C21.289 18.487 20.546 19.262 19.605 19.524C17.896 20 12 20 12 20C12 20 6.107 20 4.395 19.524C3.45 19.258 2.708 18.484 2.457 17.502C2 15.72 2 12 2 12C2 12 2 8.28 2.457 6.498C2.711 5.513 3.454 4.738 4.395 4.476C6.107 4 12 4 12 4C12 4 17.896 4 19.605 4.476C20.55 4.742 21.292 5.516 21.543 6.498ZM10 15.5L16 12L10 8.5V15.5Z"
+              />
+            </svg>
+          </a>
+        </div>
+        <div class="contact-info">
+          <p>Contact Us: info@cojim.org</p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Welcome to City Of Champions</h1>
+        <h2>Raising Champions Through Academic Excellence</h2>
+        <p>
+          We nurture young minnds from creche to primary level, building future
+          leaders grounded in knowledge, discipline, and faith.
+        </p>
+        <div class="hero-buttons">
+          <a href="#join" class="btn primary">Apply for Admission</a>
+          <a href="#watch" class="btn secondary">Explore Our School</a>
+        </div>
+        <!--
+        <div class="service-countdown">
+          <h3>Next Service Starts In:</h3>
+          <div class="countdown-timer">
+            <div class="time-block">
+              <span id="days">3</span>
+              <label>Days</label>
+            </div>
+            <div class="time-block">
+              <span id="hours">21</span>
+              <label>Hours</label>
+            </div>
+            <div class="time-block">
+              <span id="minutes">34</span>
+              <label>Minutes</label>
+            </div>
+            <div class="time-block">
+              <span id="seconds">34</span>
+              <label>Seconds</label>
+            </div>
+          </div>
+        </div>-->
+      </div>
+    </section>
+
+    <!-- School Features -->
+    <section class="features">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="white">
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"
+            />
+          </svg>
+        </div>
+        <h3>Creche & Daycare</h3>
+        <p>Safe and nurturing environment for toddlers</p>
+        <a href="#learn-more" class="feature-link">Enroll Now</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="white">
+            <path
+              d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"
+            />
+          </svg>
+        </div>
+        <h3>Nursery School</h3>
+        <p>Pre-nursery, Nursery 1, 2, 3 foundation</p>
+        <a href="#enroll" class="feature-link">Enroll Now</a>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="white">
+            <path
+              d="M21 6h-7.59l3.29-3.29L16 2l-4 4-4-4-.71.71L10.59 6H3c-1.1 0-2 .89-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.11-.9-2-2-2zm0 14H3V8h18v12zM9 10v8l7-4z"
+            />
+          </svg>
+        </div>
+        <h3>Primary School</h3>
+        <p>Primary 1 - 6 academic excellence</p>
+        <a href="#" class="feature-link">Enroll Now</a>
+      </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section class="events-section">
+      <div class="container">
+        <h2 class="section-title1">Upcoming Events</h2>
+        <p class="section-subtitle">
+          Stay updated with our latest programs and gatherings
+        </p>
+
+        <div class="events-grid">
+          <!-- Event 1 -->
+          <div class="event-card">
+            <div class="event-date">
+              <span class="day">12</span>
+              <span class="month">AUG</span>
+            </div>
+
+            <div class="event-content">
+              <h3>Inter-State Competition</h3>
+              <p>
+                Join us for a powerful youth gathering filled with inspiration
+                and growth.
+              </p>
+
+              <div class="event-meta">
+                <span>📍 Main Auditorium</span>
+                <span>⏰ 10:00 AM</span>
+              </div>
+
+              <a href="#" class="event-btn">View Details →</a>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="event-card">
+            <div class="event-date">
+              <span class="day">18</span>
+              <span class="month">AUG</span>
+            </div>
+
+            <div class="event-content">
+              <h3>Interhouse Sports</h3>
+              <p>
+                Join us for an exciting competition between different houses.
+              </p>
+
+              <div class="event-meta">
+                <span>📍 Sports Ground</span>
+                <span>⏰ 8:30 AM</span>
+              </div>
+
+              <a href="#" class="event-btn">View Details →</a>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="event-card">
+            <div class="event-date">
+              <span class="day">25</span>
+              <span class="month">AUG</span>
+            </div>
+
+            <div class="event-content">
+              <h3>Leadership Training</h3>
+              <p>Develop leadership skills and grow your impact.</p>
+
+              <div class="event-meta">
+                <span>📍 Conference Room</span>
+                <span>⏰ 4:00 PM</span>
+              </div>
+
+              <a href="#" class="event-btn"> View Details →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 class="section-title">What People Say</h2>
+        <p class="section-subtitle1">
+          Hear from our community members about their journey and experience
+        </p>
+
+        <div class="testimonial-grid">
+          <!-- Card -->
+          <div class="testimonial-card">
+            <p class="quote">
+              “COJIM has been a blessing to my family. The community is
+              welcoming and the teachings have transformed our lives.”
+            </p>
+            <div class="stars">★★★★★</div>
+
+            <div class="testimonial-author">
+              <div class="author-icon">
+                <span>JA</span>
+              </div>
+              <div class="author-info">
+                <h4>Jennifer Adams</h4>
+                <p>Member since 2020</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div class="testimonial-card">
+            <p class="quote">
+              “The prophetic ministry here is remarkable. I’ve experienced real
+              growth and deeper understanding.”
+            </p>
+            <div class="stars">★★★★★</div>
+
+            <div class="testimonial-author">
+              <div class="author-icon">
+                <span>MI</span>
+              </div>
+              <div class="author-info">
+                <h4>Michael</h4>
+                <p>Member since 2021</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div class="testimonial-card">
+            <p class="quote">
+              “The youth programs have helped my children stay grounded. They
+              look forward to church every week.”
+            </p>
+            <div class="stars">★★★★★</div>
+
+            <div class="testimonial-author">
+              <div class="author-icon">
+                <span>GO</span>
+              </div>
+              <div class="author-info">
+                <h4>Goodness</h4>
+                <p>Member since 2019</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card -->
+          <div class="testimonial-card">
+            <p class="quote">
+              “Finding this community changed my journey. The fellowship here is
+              truly impactful.”
+            </p>
+            <div class="stars">★★★★★</div>
+
+            <div class="testimonial-author">
+              <div class="author-icon">
+                <span>PE</span>
+              </div>
+              <div class="author-info">
+                <h4>Peter</h4>
+                <p>Member since 2022</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visit Us Section -->
+    <section class="visit-us">
+      <h2>Visit Us</h2>
+      <p>Enroll your child with us today</p>
+
+      <div class="contact-grid">
+        <!-- Contact Form -->
+        <div class="contact-form">
+          <h3>Get In Touch</h3>
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Your Email" />
+          <input type="tel" placeholder="Phone Number" />
+          <textarea placeholder="Your Message"></textarea>
+          <button class="send-message-btn">Send Message</button>
+        </div>
+
+        <!-- Map and Contact Info -->
+        <div class="contact-info">
+          <!-- Map Container -->
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7376395563207!2d7.544398!3d6.433611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1044a3d8f8298afb%3A0x6b24b0d2406087ac!2sCity%20Of%20Jesus%20International%20Ministry%20(COJIM)!5e0!3m2!1sen!2sng!4v1702910422626!5m2!1sen!2sng"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="info-items">
+            <div class="info-item">
+              <div class="info-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </div>
+              <div class="info-content">
+                <h4>Address</h4>
+                <p>
+                  IN/20 Emene Industrial Layout, Enugu East Local Government
+                  Area, Enugu State, Nigeria, West Africa
+                </p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  />
+                </svg>
+              </div>
+              <div class="info-content">
+                <h4>Phone</h4>
+                <p>(555) 123-4567</p>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <div class="info-content">
+                <h4>Email</h4>
+                <p>info@gatheringofchampions.com</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-about">
+          <a href="/" class="footer-logo">
+            <!--<img src="images/image copy 2.png" alt="COJIM" />-->
+          </a>
+          <p>
+            Transforming young minds to the making of future champions now, by
+            making them leaders of tomorrow
+          </p>
+          <div class="social-links">
+            <a href="#facebook" class="social-link" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.22 5.96C15.31 5.96 16.45 6.15 16.45 6.15V8.62H15.19C13.95 8.62 13.56 9.39 13.56 10.18V12.06H16.34L15.89 14.96H13.56V21.96A10 10 0 0 0 22 12.06C22 6.53 17.5 2.04 12 2.04Z"
+                />
+              </svg>
+            </a>
+            <a href="#instagram" class="social-link" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M12 2C14.717 2 15.056 2.01 16.122 2.06C17.187 2.11 17.912 2.277 18.55 2.525C19.21 2.779 19.766 3.123 20.322 3.678C20.8305 4.1779 21.224 4.78259 21.475 5.45C21.722 6.087 21.89 6.813 21.94 7.878C21.987 8.944 22 9.283 22 12C22 14.717 21.99 15.056 21.94 16.122C21.89 17.187 21.722 17.912 21.475 18.55C21.2247 19.2178 20.8311 19.8226 20.322 20.322C19.822 20.8303 19.2173 21.2238 18.55 21.475C17.913 21.722 17.187 21.89 16.122 21.94C15.056 21.987 14.717 22 12 22C9.283 22 8.944 21.99 7.878 21.94C6.813 21.89 6.088 21.722 5.45 21.475C4.78233 21.2245 4.17753 20.8309 3.678 20.322C3.16941 19.8222 2.77593 19.2175 2.525 18.55C2.277 17.913 2.11 17.187 2.06 16.122C2.013 15.056 2 14.717 2 12C2 9.283 2.01 8.944 2.06 7.878C2.11 6.812 2.277 6.088 2.525 5.45C2.77524 4.78218 3.1688 4.17732 3.678 3.678C4.17767 3.16923 4.78243 2.77573 5.45 2.525C6.088 2.277 6.812 2.11 7.878 2.06C8.944 2.013 9.283 2 12 2Z"
+                />
+              </svg>
+            </a>
+            <a href="#youtube" class="social-link" aria-label="YouTube">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M21.543 6.498C22 8.28 22 12 22 12C22 12 22 15.72 21.543 17.502C21.289 18.487 20.546 19.262 19.605 19.524C17.896 20 12 20 12 20C12 20 6.107 20 4.395 19.524C3.45 19.258 2.708 18.484 2.457 17.502C2 15.72 2 12 2 12C2 12 2 8.28 2.457 6.498C2.711 5.513 3.454 4.738 4.395 4.476C6.107 4 12 4 12 4C12 4 17.896 4 19.605 4.476C20.55 4.742 21.292 5.516 21.543 6.498ZM10 15.5L16 12L10 8.5V15.5Z"
+                />
+              </svg>
+            </a>
+            <a href="#link" class="social-link" aria-label="Website Link">
+              <svg width="24" height="24" viewBox="0 0 24 24">
+                <path
+                  d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-column">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#about"><i class="fas fa-chevron-right"></i> About Us</a>
+            </li>
+            <li>
+              <a href="#sermons"
+                ><i class="fas fa-chevron-right"></i> Upcoming Events</a
+              >
+            </li>
+            <li>
+              <a href="#ministries"
+                ><i class="fas fa-chevron-right"></i> Gallery</a
+              >
+            </li>
+            <li>
+              <a href="#events"><i class="fas fa-chevron-right"></i> Events</a>
+            </li>
+            <li>
+              <a href="#contact"
+                ><i class="fas fa-chevron-right"></i> Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Admission</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#children"
+                ><i class="fas fa-chevron-right"></i>Admission Requirements</a
+              >
+            </li>
+            <li>
+              <a href="#youth"
+                ><i class="fas fa-chevron-right"></i>How to Apply</a
+              >
+            </li>
+            <li>
+              <a href="#youth"
+                ><i class="fas fa-chevron-right"></i>School Rules</a
+              >
+            </li>
+            <li>
+              <a href="#youth"
+                ><i class="fas fa-chevron-right"></i>Terms & Dates</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-column">
+          <h4>Newsletter</h4>
+          <p>Stay updated with our latest news and events</p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              class="newsletter-input"
+              placeholder="Your email"
+            />
+            <button type="submit" class="newsletter-button">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 City of Jesus International Ministry. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/side-nav.js"></script>
+    <script src="js/modal.js"></script>
+  </body>
+</html>

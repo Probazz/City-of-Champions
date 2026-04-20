@@ -177,6 +177,7 @@ body {
   align-items: center;
   padding: 2rem;
   background-color: #182848;
+  height: 90vh;
 }
 
 .page-header2 h1 {
@@ -184,6 +185,7 @@ body {
   font-size: 3rem;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   color: rgb(241, 241, 241);
+  margin-left: 4rem;
 }
 
 .page-header2 p {
@@ -196,9 +198,10 @@ body {
 
 .events-container {
   max-width: 900px;
-  margin: auto;
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  justify-content: center;
 }
 
 /* EVENT CARD */
@@ -209,6 +212,8 @@ body {
   overflow: hidden;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s;
+  width: 40rem;
+  height: 9rem;
 }
 
 .event-card:hover {
@@ -221,7 +226,7 @@ body {
   color: white;
   padding: 1.5rem;
   text-align: center;
-  min-width: 80px;
+  min-width: 40px;
 }
 
 .event-date h2 {
@@ -255,3 +260,221 @@ body {
   color: #4a94bd;
   font-weight: bold;
 }
+
+.about-section {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* TOP LAYOUT */
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 400px;
+}
+
+/* TEXT SIDE */
+.about-text {
+  background: #1e3a5f;
+  color: white;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+/* IMAGE SIDE */
+.about-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* STATS SECTION */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.stat-card {
+  text-align: center;
+  padding: 2rem;
+  color: white;
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* COLORS */
+.pink { background: #e91e63; }
+.blue { background: #2196f3; }
+.yellow { background: #f4c430; }
+.purple { background: #673ab7; }
+.green { background: #4caf50; }
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* SECTION BACKGROUND */
+.gallery-section {
+  background: #f9fbfd;
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* CONTAINER */
+.gallery-container {
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+}
+
+/* TITLE */
+.gallery-container h1 {
+  font-size: 2.5rem;
+  color: #2c6e6f;
+  margin-bottom: 0.5rem;
+}
+
+/* SUBTITLE */
+.subtitle {
+  color: #777;
+  margin-bottom: 3rem;
+}
+
+/* GRID */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+/* CARD */
+.gallery-card {
+  border-radius: 15px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* IMAGE */
+.gallery-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* HOVER EFFECT */
+.gallery-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vision-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to right, #3f4e61, #4994bc);
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+/* TITLE */
+.vision-title {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 3rem;
+  margin-top: 0;
+  font-weight: bold;
+}
+
+/* GRID */
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* CARD */
+.vision-card {
+  background: white;
+  border-radius: 20px;
+  text-align: left;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+  position: relative;
+}
+
+/* IMAGE */
+.vision-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+/* TITLE */
+.vision-card h3 {
+  color: #333;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 20px;
+}
+
+/* TEXT */
+.vision-card p {
+  color: #555;
+  line-height: 1.6;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+/* HOVER */
+.vision-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
